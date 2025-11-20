@@ -7,7 +7,7 @@ import Cart from "./cartpage";
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [cart, setCart] = useState([]);
-  const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState();
  
   useEffect(() => {
     fetch("https://dummyjson.com/recipes")
@@ -20,9 +20,10 @@ function Recipes() {
 
   function addToCart(item) {
     setCart([...cart, item]);
+    alert("added to cart");
      setShowCart(true);
   }
-  const total = cart.reduce((sum, item) => sum + (item.price || 150), 0);
+  const total = cart.reduce((sum, item) => sum + (150), 0);
 
    function goToCart() {
     setShowCart(true);
@@ -33,25 +34,28 @@ function Recipes() {
   }
   return (
     <div className="">
-
-      <h1 className="mt-3 text-center">Recipes Here</h1>
-      {!showCart && (
-        <button className="btn btn-primary mb-3" onClick={goToCart}>
+         <h1 className="mt-3 text-center">Recipes Here</h1>
+   
+    { !showCart && (
+        <button className="btn btn-primary mb-3 "style={{marginLeft:"1350px"}} onClick={goToCart}>
           Go to Cart
         </button>
       )}
-
-      {showCart && (
-        <button className="btn btn-secondary mb-3" onClick={backToRecipes}>
+    
+    
+        
+     {showCart && (
+        <button class="button"style={{marginLeft:"1350px"}} className=" mb-3" onClick={backToRecipes}>
           Back to Recipes
         </button>
       )}
+  
 {showCart ? (
         <Cart 
           cart={cart} 
           total={total} 
           back={backToRecipes}   
-        />
+        ></Cart>
       ) : (
         <div className="d-flex flex-wrap">
           {recipes.map((item, index) => (
@@ -71,7 +75,7 @@ function Recipes() {
             </RecipeCard>
             
         ))}
-        <Cart cart={cart} total={total}></Cart>
+        
       </div>
 
          
