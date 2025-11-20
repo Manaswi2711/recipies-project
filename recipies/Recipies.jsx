@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Recipes.css";
 import RecipeCard from "./recipe";
+import Cart from "./cartpage";
 
 
 function Recipes() {
@@ -21,7 +22,7 @@ function Recipes() {
     setCart([...cart, item]);
      setShowCart(true);
   }
-  const total = cart.reduce((sum, item) => sum + (item.price || 100), 0);
+  const total = cart.reduce((sum, item) => sum + (item.price || 150), 0);
 
    function goToCart() {
     setShowCart(true);
@@ -45,8 +46,22 @@ function Recipes() {
           Back to Recipes
         </button>
       )}
+{showCart ? (
+        <Cart 
+          cart={cart} 
+          total={total} 
+          back={backToRecipes}   
+        />
+      ) : (
+        <div className="d-flex flex-wrap">
+          {recipes.map((item, index) => (
+            <RecipeCard
+              item={item}
+              addToCart={addToCart}></RecipeCard>
+          ))}
+        </div>
+      )}
 
-      
       <div className="d-flex flex-wrap">
         {recipes.map((item, index) => (
           <RecipeCard  
@@ -54,7 +69,9 @@ function Recipes() {
             addToCart={addToCart}>
 
             </RecipeCard>
+            
         ))}
+        <Cart cart={cart} total={total}></Cart>
       </div>
 
          
