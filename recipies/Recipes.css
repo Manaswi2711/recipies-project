@@ -1,0 +1,47 @@
+img{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    width:260px; 
+    height:230px;
+    padding:10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.hover:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    
+}
+
+p{
+    font-style: italic;
+    color: grey;
+}
+
+button{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+h1{
+   color:rgb(45, 17, 200);
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.style{
+    flex-direction: column ;
+    flex-wrap: wrap;
+}
