@@ -11,7 +11,8 @@ function Cart({ cart, total, back }) {
         <p>No items in cart</p>
       ) : (
         cart.map((item, index) => (
-          <p>{item.name} — ₹{item.price||150}</p>
+          <p>{item.name}-- ₹{item.price||150}</p>
+        
         ))
       )}
 

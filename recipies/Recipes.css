@@ -32,10 +32,8 @@ p{
     border-radius: 12px;
 
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-}
+
+
 h1{
    color:rgb(45, 17, 200);
    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
